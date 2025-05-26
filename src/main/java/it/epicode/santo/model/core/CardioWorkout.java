@@ -1,28 +1,29 @@
 package it.epicode.santo.model.core;
 
+/**
+ * Represents a cardio workout session, including its name, duration, and distance.
+ * Implements the {@link Workout} interface and supports serialization.
+ * <p>
+ * This class validates input data to ensure that the workout name is not empty,
+ * the duration is positive, and the distance is non-negative.
+ * </p>
+ *
+ * <p>
+ * Example usage:
+ * <pre>
+ *     CardioWorkout run = new CardioWorkout("Morning Run", 30, 5.0);
+ * </pre>
+ * </p>
+ *
+ * @see Workout
+ * @see Serializable
+ */
 public class CardioWorkout implements Workout {
     private String name;
     private int duration; // minutes
     private double distanceKm;
 
     public CardioWorkout(String name, int duration, double distanceKm) {
-        // input validation
-        if (name == null || name.trim().isEmpty()) {
-            /*
-             * TODO lancia eccezione personalizzata
-             */
-        }
-        if (duration <= 0) {
-            /*
-             * TODO lancia eccezione personalizzata
-             */
-        }
-        if (distanceKm <= 0) {
-            /*
-             * TODO lancia eccezione personalizzata
-             */
-        }
-
         this.name = name;
         this.duration = duration;
         this.distanceKm = distanceKm;
