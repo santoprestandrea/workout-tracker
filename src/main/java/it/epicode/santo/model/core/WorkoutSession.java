@@ -3,6 +3,10 @@ package it.epicode.santo.model.core;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.epicode.santo.model.iterator.WorkoutCollection;
+import it.epicode.santo.model.iterator.WorkoutIterator;
+import it.epicode.santo.model.iterator.WorkoutSessionIterator;
+
 // Composite: WorkoutSession
 /**
  * Represents a workout session that can contain multiple {@link Workout} components.
@@ -18,7 +22,7 @@ import java.util.List;
  * </p>
  *
  */
-public class WorkoutSession implements Workout {
+public class WorkoutSession implements Workout, WorkoutCollection {
     private String name;
     private List<Workout> workouts;
 
@@ -69,5 +73,25 @@ public class WorkoutSession implements Workout {
             details.append(workout.getDetails()).append("\n");
         }
         return details.toString();
+    }
+
+    @Override
+    public int getSize() {
+        int size = workouts.size();
+        return size;
+    }
+
+    @Override
+    public Workout getWorkoutAt(int index){
+        if(index < 0 || index >= workouts.size()){
+            throw new IndexOutOfBoundsException("Index out of bounds:" + index);
+        }
+        Workout workout = workouts.get(index);
+        return workout;
+    }
+
+    @Override
+    public WorkoutIterator createIterator(){
+        return new WorkoutSessionIterator(this);
     }
 }
