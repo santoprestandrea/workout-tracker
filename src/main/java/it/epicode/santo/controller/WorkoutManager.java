@@ -42,6 +42,14 @@ public class WorkoutManager {
         LOGGER.info("WorkoutManager inizializzato");
     }
 
+    // Singleton getter
+    public static WorkoutManager getInstance() {
+        if (instance == null) {
+            instance = new WorkoutManager();
+        }
+        return instance;
+    }
+
     // === WORKOUT CREATION ===
 
     public Workout createStrengthWorkout(String name, int duration, int sets, int reps)

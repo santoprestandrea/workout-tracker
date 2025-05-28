@@ -1,0 +1,196 @@
+{
+    "workouts": [
+        {
+            "name": "Bench Press",
+            "duration": 45,
+            "type": "strength",
+            "sets": 4,
+            "reps": 10
+        },
+        {
+            "name": "Running",
+            "duration": 30,
+            "type": "cardio",
+            "distanceKm": 5.5
+        },
+        {
+            "name": "Squat",
+            "duration": 40,
+            "type": "strength",
+            "sets": 5,
+            "reps": 8
+        },
+        {
+            "name": "Row",
+            "duration": 35,
+            "type": "strength",
+            "sets": 4,
+            "reps": 12
+        },
+        {
+            "name": "Cycling",
+            "duration": 60,
+            "type": "cardio",
+            "distanceKm": 20
+        },
+        {
+            "name": "Push-up",
+            "duration": 20,
+            "type": "strength",
+            "sets": 3,
+            "reps": 15
+        },
+        {
+            "name": "Elliptical",
+            "duration": 25,
+            "type": "cardio",
+            "distanceKm": 4
+        },
+        {
+            "name": "Deadlift",
+            "duration": 50,
+            "type": "strength",
+            "sets": 5,
+            "reps": 6
+        },
+        {
+            "name": "Plank",
+            "duration": 10,
+            "type": "strength",
+            "sets": 3,
+            "reps": 1
+        }
+    ],
+    "sessions": [
+        {
+            "name": "Strength Session 1",
+            "type": "session",
+            "workouts": [
+                {
+                    "name": "Bench Press",
+                    "duration": 45,
+                    "type": "strength",
+                    "sets": 4,
+                    "reps": 10
+                },
+                {
+                    "name": "Squat",
+                    "duration": 40,
+                    "type": "strength",
+                    "sets": 5,
+                    "reps": 8
+                },
+                {
+                    "name": "Deadlift",
+                    "duration": 50,
+                    "type": "strength",
+                    "sets": 5,
+                    "reps": 6
+                }
+            ]
+        },
+        {
+            "name": "Cardio Session 1",
+            "type": "session",
+            "workouts": [
+                {
+                    "name": "Running",
+                    "duration": 30,
+                    "type": "cardio",
+                    "distanceKm": 5.5
+                },
+                {
+                    "name": "Cycling",
+                    "duration": 60,
+                    "type": "cardio",
+                    "distanceKm": 20
+                },
+                {
+                    "name": "Elliptical",
+                    "duration": 25,
+                    "type": "cardio",
+                    "distanceKm": 4
+                }
+            ]
+        },
+        {
+            "name": "Mixed Session",
+            "type": "session",
+            "workouts": [
+                {
+                    "name": "Push-up",
+                    "duration": 20,
+                    "type": "strength",
+                    "sets": 3,
+                    "reps": 15
+                },
+                {
+                    "name": "Plank",
+                    "duration": 10,
+                    "type": "strength",
+                    "sets": 3,
+                    "reps": 1
+                },
+                {
+                    "name": "Running",
+                    "duration": 30,
+                    "type": "cardio",
+                    "distanceKm": 5.5
+                }
+            ]
+        }
+    ],
+    "programs": [
+        {
+            "name": "Complete Program 1",
+            "schedule": [
+                {
+                    "type": "session_ref",
+                    "name": "Strength Session 1"
+                },
+                {
+                    "type": "session_ref",
+                    "name": "Cardio Session 1"
+                },
+                {
+                    "name": "Plank",
+                    "duration": 10,
+                    "type": "strength",
+                    "sets": 3,
+                    "reps": 1
+                }
+            ]
+        },
+        {
+            "name": "Beginner Program",
+            "schedule": [
+                {
+                    "type": "session_ref",
+                    "name": "Mixed Session"
+                },
+                {
+                    "name": "Row",
+                    "duration": 35,
+                    "type": "strength",
+                    "sets": 4,
+                    "reps": 12
+                }
+            ]
+        },
+        {
+            "name": "Cardio Plus",
+            "schedule": [
+                {
+                    "type": "session_ref",
+                    "name": "Cardio Session 1"
+                },
+                {
+                    "name": "Running",
+                    "duration": 30,
+                    "type": "cardio",
+                    "distanceKm": 5.5
+                }
+            ]
+        }
+    ]
+}

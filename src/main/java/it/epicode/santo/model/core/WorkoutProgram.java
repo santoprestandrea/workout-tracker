@@ -89,4 +89,8 @@ public class WorkoutProgram implements Workout, WorkoutCollection {
     public void removeWorkoutFromSchedule(Workout workout) {
         schedule.remove(workout);
     }
+
+    public Iterable<Workout> getSchedule() {
+        return new ArrayList<>(schedule);
+    }
 }

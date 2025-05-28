@@ -90,4 +90,9 @@ public class WorkoutSession implements Workout, WorkoutCollection {
     public WorkoutIterator createIterator(){
         return new WorkoutSessionIterator(this);
     }
+
+    public Iterable<Workout> getWorkouts() {
+        return new ArrayList<>(workouts);
+        
+    }
 }

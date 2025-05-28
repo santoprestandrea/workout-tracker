@@ -1,0 +1,213 @@
+@startuml
+' ==== PACKAGE STRUCTURE ====
+package "santo.controller" {
+    class WorkoutManager <<Singleton>> {
+        - List<Workout> allWorkouts
+        - List<WorkoutSession> sessions
+        - List<WorkoutProgram> programs
+        - StrengthWorkoutCreator strengthFactory
+        - CardioWorkoutCreator cardioFactory
+        - WorkoutFileHandler fileHandler
+        --
+        + getInstance()
+        + createStrengthWorkout(name, duration, sets, reps)
+        + createCardioWorkout(name, duration, distanceKm)
+        + createSession(name)
+        + createProgram(name)
+        + addWorkoutToSession(session, workout)
+        + addWorkoutToProgram(program, workout)
+        + getAllWorkouts()
+        + getAllSessions()
+        + getAllPrograms()
+        + findWorkoutByName(name)
+        + findSessionByName(name)
+        + findProgramByName(name)
+        + removeWorkout(workout)
+        + removeSession(session)
+        + removeProgram(program)
+        + getTotalWorkouts()
+        + getTotalSessions()
+        + getTotalPrograms()
+        + getTotalDurationMinutes()
+        + saveToFile(filename)
+        + loadFromFile(filename)
+    }
+}
+
+package "santo.model.core" {
+    interface Workout {
+        + getName()
+        + getDuration()
+        + getDetails()
+    }
+    class StrengthWorkout implements Workout {
+        - String name
+        - int duration
+        - int sets
+        - int reps
+        --
+        + getSets()
+        + getReps()
+    }
+    class CardioWorkout implements Workout {
+        - String name
+        - int duration
+        - double distanceKm
+        --
+        + getDistanceKm()
+    }
+    class WorkoutSession implements Workout, WorkoutCollection, Serializable {
+        - String name
+        - List<Workout> workouts
+        --
+        + addWorkout(workout)
+        + removeWorkout(workout)
+        + getWorkouts()
+        + getSize()
+        + getWorkoutAt(i)
+        + createIterator()
+    }
+    class WorkoutProgram implements Workout, WorkoutCollection, Serializable {
+        - String name
+        - List<Workout> schedule
+        --
+        + addWorkoutToSchedule(workout)
+        + removeWorkoutFromSchedule(workout)
+        + getSchedule()
+        + getSize()
+        + getWorkoutAt(i)
+        + createIterator()
+    }
+}
+
+package "santo.model.factory" {
+    abstract class WorkoutCreator {
+        # validateCommonParams(name, duration)
+        + createWorkout(name, duration, Object... specificParams)
+    }
+    class StrengthWorkoutCreator extends WorkoutCreator
+    class CardioWorkoutCreator extends WorkoutCreator
+}
+
+package "santo.model.iterator" {
+    interface WorkoutIterator {
+        + hasNext()
+        + next()
+        + isEmpty()
+        + reset()
+    }
+    interface WorkoutCollection {
+        + createIterator()
+        + getSize()
+        + getWorkoutAt(i)
+    }
+    class WorkoutSessionIterator implements WorkoutIterator
+    class WorkoutProgramIterator implements WorkoutIterator
+}
+
+package "santo.model.exceptions" {
+    class InvalidWorkoutDataException extends RuntimeException
+}
+
+package "santo.util" {
+    class WorkoutFileHandler {
+        + saveWorkouts(fileName, workouts, sessions, programs)
+        + loadWorkouts(fileName)
+    }
+    class LoggerManager <<Singleton>> {
+        + getLogger()
+    }
+    class WorkoutData <<DTO>> {
+        + List<Workout> workouts
+        + List<WorkoutSession> sessions
+        + List<WorkoutProgram> programs
+    }
+}
+
+package "santo.view" {
+    class MainWindow extends JFrame
+    class WorkoutCreationPanel extends JPanel
+    class WorkoutListPanel extends JPanel
+    class SessionManagementPanel extends JPanel
+    class StatisticsPanel extends JPanel
+    class WorkoutDetailsPanel extends JPanel
+}
+
+' ==== RELATIONSHIPS ====
+Workout <|.. StrengthWorkout
+Workout <|.. CardioWorkout
+Workout <|.. WorkoutSession
+Workout <|.. WorkoutProgram
+
+WorkoutCollection <|.. WorkoutSession
+WorkoutCollection <|.. WorkoutProgram
+
+WorkoutSession --> "1..*" Workout : contains
+WorkoutProgram --> "1..*" Workout : schedule
+
+WorkoutSession --> WorkoutSessionIterator
+WorkoutProgram --> WorkoutProgramIterator
+
+WorkoutCreator <|-- StrengthWorkoutCreator
+WorkoutCreator <|-- CardioWorkoutCreator
+
+WorkoutManager --> WorkoutFileHandler
+WorkoutManager --> StrengthWorkoutCreator
+WorkoutManager --> CardioWorkoutCreator
+
+WorkoutManager --> Workout
+WorkoutManager --> WorkoutSession
+WorkoutManager --> WorkoutProgram
+
+LoggerManager <.. MainWindow
+LoggerManager <.. WorkoutManager
+
+MainWindow --> WorkoutManager
+MainWindow --> WorkoutCreationPanel
+MainWindow --> WorkoutListPanel
+MainWindow --> SessionManagementPanel
+MainWindow --> StatisticsPanel
+MainWindow --> WorkoutDetailsPanel
+
+SessionManagementPanel --> WorkoutManager
+WorkoutCreationPanel --> WorkoutManager
+WorkoutListPanel --> WorkoutManager
+StatisticsPanel --> WorkoutManager
+
+WorkoutFileHandler --> Workout
+WorkoutFileHandler --> WorkoutSession
+WorkoutFileHandler --> WorkoutProgram
+WorkoutFileHandler --> WorkoutData
+
+WorkoutFileHandler ..> InvalidWorkoutDataException
+
+' ==== NOTE ON PATTERNS ====
+note right of WorkoutManager
+Singleton Pattern
+end note
+
+note right of LoggerManager
+Singleton Pattern
+end note
+
+note right of WorkoutCreator
+Factory Pattern
+end note
+
+note right of WorkoutSession
+Composite Pattern
+end note
+
+note right of WorkoutProgram
+Composite Pattern
+end note
+
+note right of WorkoutIterator
+Iterator Pattern
+end note
+
+note right of WorkoutData
+DTO Pattern
+end note
+
+@enduml

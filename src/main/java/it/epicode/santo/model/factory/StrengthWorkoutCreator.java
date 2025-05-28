@@ -2,7 +2,7 @@ package it.epicode.santo.model.factory;
 
 import java.util.logging.Logger;
 
-import it.epicode.santo.model.core.StrenghtWorkout;
+import it.epicode.santo.model.core.StrengthWorkout;
 import it.epicode.santo.model.core.Workout;
 import it.epicode.santo.model.exceptions.InvalidWorkoutDataException;
 import it.epicode.santo.util.LoggerManager;
@@ -35,7 +35,7 @@ public class StrengthWorkoutCreator extends WorkoutCreator {
                 }
 
                 // call StrghtWorkout constractor
-                return new StrenghtWorkout(name, duration, sets, reps);
+                return new StrengthWorkout(name, duration, sets, reps);
             }
             throw new IllegalArgumentException(
                     "Specific params for StrenghtWorkout must be two intengers (sets,reps) ");

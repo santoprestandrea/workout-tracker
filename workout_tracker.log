@@ -1,0 +1,66 @@
+mag 29, 2025 12:17:33 AM it.epicode.santo.controller.WorkoutManager <init>
+INFORMAZIONI: WorkoutManager inizializzato
+mag 29, 2025 12:17:34 AM it.epicode.santo.view.MainWindow <init>
+INFORMAZIONI: MainWindow initialized
+mag 29, 2025 12:17:59 AM it.epicode.santo.controller.WorkoutManager createCardioWorkout
+INFORMAZIONI: Create CardioWorkout: santo
+mag 29, 2025 12:18:16 AM it.epicode.santo.util.WorkoutFileHandler loadWorkouts
+INFORMAZIONI: load successfully complitely from file workouts.json
+mag 29, 2025 12:18:16 AM it.epicode.santo.controller.WorkoutManager loadFromFile
+INFORMAZIONI: Data loaded from file: workouts.json
+mag 29, 2025 12:21:48 AM it.epicode.santo.controller.WorkoutManager <init>
+INFORMAZIONI: WorkoutManager inizializzato
+mag 29, 2025 12:21:48 AM it.epicode.santo.view.MainWindow <init>
+INFORMAZIONI: MainWindow initialized
+mag 29, 2025 12:22:14 AM it.epicode.santo.controller.WorkoutManager <init>
+INFORMAZIONI: WorkoutManager inizializzato
+mag 29, 2025 12:22:14 AM it.epicode.santo.view.MainWindow <init>
+INFORMAZIONI: MainWindow initialized
+mag 29, 2025 12:22:25 AM it.epicode.santo.util.WorkoutFileHandler loadWorkouts
+INFORMAZIONI: load successfully complitely from file workouts.json
+mag 29, 2025 12:22:25 AM it.epicode.santo.controller.WorkoutManager loadFromFile
+INFORMAZIONI: Data loaded from file: workouts.json
+mag 29, 2025 12:24:24 AM it.epicode.santo.controller.WorkoutManager <init>
+INFORMAZIONI: WorkoutManager inizializzato
+mag 29, 2025 12:24:24 AM it.epicode.santo.view.MainWindow <init>
+INFORMAZIONI: MainWindow initialized
+mag 29, 2025 12:24:39 AM it.epicode.santo.util.WorkoutFileHandler loadWorkouts
+INFORMAZIONI: load successfully complitely from file workouts.json
+mag 29, 2025 12:24:39 AM it.epicode.santo.controller.WorkoutManager loadFromFile
+INFORMAZIONI: Data loaded from file: workouts.json
+mag 29, 2025 12:41:31 AM it.epicode.santo.model.factory.WorkoutCreator validateCommonParams
+AVVERTENZA: attempt to create a workout with invalide duration
+mag 29, 2025 12:41:31 AM it.epicode.santo.model.factory.WorkoutCreator validateCommonParams
+AVVERTENZA: attempt to create a workout with invalide duration
+mag 29, 2025 12:41:31 AM it.epicode.santo.model.factory.WorkoutCreator validateCommonParams
+AVVERTENZA: attempt to create a workout with invalide duration
+mag 29, 2025 12:41:31 AM it.epicode.santo.model.factory.WorkoutCreator validateCommonParams
+AVVERTENZA: attemptt to create a workout with invalide name
+mag 29, 2025 12:41:31 AM it.epicode.santo.model.factory.WorkoutCreator validateCommonParams
+AVVERTENZA: attemptt to create a workout with invalide name
+mag 29, 2025 12:41:31 AM it.epicode.santo.model.factory.StrengthWorkoutCreator createWorkout
+AVVERTENZA: attempt to create streght workout with invalid sets and/or reps: 4 0
+mag 29, 2025 12:41:31 AM it.epicode.santo.model.factory.StrengthWorkoutCreator createWorkout
+AVVERTENZA: attempt to create streght workout with invalid sets and/or reps: 0 12
+mag 29, 2025 12:41:31 AM it.epicode.santo.model.factory.CardioWorkoutCreator createWorkout
+AVVERTENZA: attempt to create cardioworkout with negative distance: -2.0
+mag 29, 2025 12:41:39 AM it.epicode.santo.model.factory.WorkoutCreator validateCommonParams
+AVVERTENZA: attempt to create a workout with invalide duration
+mag 29, 2025 12:41:40 AM it.epicode.santo.model.factory.WorkoutCreator validateCommonParams
+AVVERTENZA: attempt to create a workout with invalide duration
+mag 29, 2025 12:41:40 AM it.epicode.santo.model.factory.WorkoutCreator validateCommonParams
+AVVERTENZA: attempt to create a workout with invalide duration
+mag 29, 2025 12:41:40 AM it.epicode.santo.model.factory.WorkoutCreator validateCommonParams
+AVVERTENZA: attemptt to create a workout with invalide name
+mag 29, 2025 12:41:40 AM it.epicode.santo.model.factory.WorkoutCreator validateCommonParams
+AVVERTENZA: attemptt to create a workout with invalide name
+mag 29, 2025 12:41:40 AM it.epicode.santo.model.factory.StrengthWorkoutCreator createWorkout
+AVVERTENZA: attempt to create streght workout with invalid sets and/or reps: 4 0
+mag 29, 2025 12:41:40 AM it.epicode.santo.model.factory.StrengthWorkoutCreator createWorkout
+AVVERTENZA: attempt to create streght workout with invalid sets and/or reps: 0 12
+mag 29, 2025 12:41:40 AM it.epicode.santo.model.factory.CardioWorkoutCreator createWorkout
+AVVERTENZA: attempt to create cardioworkout with negative distance: -2.0
+mag 29, 2025 12:43:37 AM it.epicode.santo.controller.WorkoutManager <init>
+INFORMAZIONI: WorkoutManager inizializzato
+mag 29, 2025 12:43:41 AM it.epicode.santo.controller.WorkoutManager <init>
+INFORMAZIONI: WorkoutManager inizializzato

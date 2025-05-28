@@ -14,13 +14,13 @@ package it.epicode.santo.model.core;
  * </pre>
  * </p>
  */
-public class StrenghtWorkout implements Workout {
+public class StrengthWorkout implements Workout {
     private String name;
     private int duration;
     private int sets;
     private int reps;
 
-    public StrenghtWorkout(String name, int duration, int sets, int reps) {
+    public StrengthWorkout(String name, int duration, int sets, int reps) {
         this.name = name;
         this.duration = duration;
         this.sets = sets;

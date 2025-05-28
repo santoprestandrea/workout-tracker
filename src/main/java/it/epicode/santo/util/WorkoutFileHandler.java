@@ -13,7 +13,7 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import it.epicode.santo.model.core.CardioWorkout;
-import it.epicode.santo.model.core.StrenghtWorkout;
+import it.epicode.santo.model.core.StrengthWorkout;
 import it.epicode.santo.model.core.Workout;
 import it.epicode.santo.model.core.WorkoutProgram;
 import it.epicode.santo.model.core.WorkoutSession;
@@ -203,8 +203,8 @@ public class WorkoutFileHandler {
         JSONObject obj = new JSONObject();
         obj.put("name", w.getName());
         obj.put("duration", w.getDuration());
-        if (w instanceof StrenghtWorkout) {
-            StrenghtWorkout sw = (StrenghtWorkout) w;
+        if (w instanceof StrengthWorkout) {
+            StrengthWorkout sw = (StrengthWorkout) w;
             obj.put("type", "strength");
             obj.put("sets", sw.getSets());
             obj.put("reps", sw.getReps());
