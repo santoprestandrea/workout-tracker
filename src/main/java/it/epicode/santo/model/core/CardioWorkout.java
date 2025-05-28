@@ -2,7 +2,7 @@ package it.epicode.santo.model.core;
 
 /**
  * Represents a cardio workout session, including its name, duration, and distance.
- * Implements the {@link Workout} interface and supports serialization.
+ * Implements the {@link Workout} interface.
  * <p>
  * This class validates input data to ensure that the workout name is not empty,
  * the duration is positive, and the distance is non-negative.
@@ -16,7 +16,7 @@ package it.epicode.santo.model.core;
  * </p>
  *
  * @see Workout
- * @see Serializable
+ * 
  */
 public class CardioWorkout implements Workout {
     private String name;

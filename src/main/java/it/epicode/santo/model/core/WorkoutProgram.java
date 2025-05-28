@@ -13,8 +13,7 @@ import it.epicode.santo.model.iterator.WorkoutProgramIterator;
  * A WorkoutProgram can contain individual workouts or workout sessions,
  * and provides methods to manage and iterate over its schedule.
  * <p>
- * Implements the {@link Workout}, {@link WorkoutCollection}, and
- * {@link Serializable} interfaces.
+ * Implements the {@link Workout}, {@link WorkoutCollection}
  * </p>
  *
  * <p>

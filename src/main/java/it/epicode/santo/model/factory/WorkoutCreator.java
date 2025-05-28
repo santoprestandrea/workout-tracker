@@ -1,6 +1,9 @@
 package it.epicode.santo.model.factory;
 
+import java.util.logging.Logger;
+
 import it.epicode.santo.model.core.Workout;
+import it.epicode.santo.util.LoggerManager;
 
 /**
  * Abstract factory class for creating {@link Workout} instances.
@@ -17,6 +20,8 @@ import it.epicode.santo.model.core.Workout;
  * </p>
  */
 public abstract class WorkoutCreator{
+    private static final Logger LOGGER = LoggerManager.getLogger();
+
     /**
      * Creates a new Workout instance with the specified name, duration, and
      * additional parameters.
@@ -42,9 +47,11 @@ public abstract class WorkoutCreator{
      */
     protected void validateCommonParams(String name, int duration) {
         if (name == null || name.trim().isEmpty()) {
+            LOGGER.warning("attemptt to create a workout with invalide name");
             throw new IllegalArgumentException("Workout name cannot be empty or null");
         }
         if (duration <= 0) {
+            LOGGER.warning("attempt to create a workout with invalide duration");
             throw new IllegalArgumentException("Workout duration must be positive");
         }
     }

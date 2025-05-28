@@ -1,8 +1,11 @@
 package it.epicode.santo.model.factory;
 
+import java.util.logging.Logger;
+
 import it.epicode.santo.model.core.CardioWorkout;
 import it.epicode.santo.model.core.Workout;
 import it.epicode.santo.model.exceptions.InvalidWorkoutDataException;
+import it.epicode.santo.util.LoggerManager;
 
 /**
  * Factory class for creating instances of {@link CardioWorkout}.
@@ -29,6 +32,8 @@ import it.epicode.santo.model.exceptions.InvalidWorkoutDataException;
  *
  */
 public class CardioWorkoutCreator extends WorkoutCreator {
+    private static final Logger LOGGER = LoggerManager.getLogger();
+    
     @Override
     public Workout createWorkout(String name, int duration, Object... specificParams) {
         try {
@@ -38,6 +43,7 @@ public class CardioWorkoutCreator extends WorkoutCreator {
                 // input validation
                 validateCommonParams(name, duration);
                 if (distanceKm <= 0) {
+                    LOGGER.warning("attempt to create cardioworkout with negative distance: " + distanceKm);
                     throw new IllegalArgumentException("Distance must be positive");
                 }
 

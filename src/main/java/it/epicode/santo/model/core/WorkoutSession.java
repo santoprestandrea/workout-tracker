@@ -17,10 +17,6 @@ import it.epicode.santo.model.iterator.WorkoutSessionIterator;
  * The total duration of the session is the sum of the durations of all contained workouts.
  * </p>
  *
- * <p>
- * This class is serializable.
- * </p>
- *
  */
 public class WorkoutSession implements Workout, WorkoutCollection {
     private String name;

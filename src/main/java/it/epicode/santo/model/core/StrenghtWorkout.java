@@ -3,7 +3,7 @@ package it.epicode.santo.model.core;
 /**
  * Represents a strength workout session with a specific name, duration, number of sets, and repetitions.
  * <p>
- * This class implements the {@link Workout} interface and is serializable.
+ * This class implements the {@link Workout} interface.
  * It performs input validation in the constructor to ensure all parameters are valid.
  * </p>
  *
