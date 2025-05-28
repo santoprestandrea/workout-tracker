@@ -81,4 +81,12 @@ public class WorkoutProgram implements Workout, WorkoutCollection {
     public WorkoutIterator createIterator() {
         return new WorkoutProgramIterator(this);
     }
+
+    public void addWorkoutToSchedule(Workout workout) {
+        schedule.add(workout);
+    }
+
+    public void removeWorkoutFromSchedule(Workout workout) {
+        schedule.remove(workout);
+    }
 }

@@ -15,7 +15,7 @@ import it.epicode.santo.util.LoggerManager;
  * a StrengthWorkout with the specified parameters.
  * </p>
  */
-public class StreghtWorkoutCreator extends WorkoutCreator {
+public class StrengthWorkoutCreator extends WorkoutCreator {
     private static final Logger LOGGER = LoggerManager.getLogger();
 
     @Override
